@@ -18,9 +18,8 @@ public class ScanLog {
     @Id
     private String id;
     private String url;
-    private boolean phishing;
-    private int riskScore;
-    private String verdict;
+    private boolean isPhishing;
+    private double riskScore;
     private List<String> reasons;
     private Instant scannedAt;
 }

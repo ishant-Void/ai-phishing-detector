@@ -1,5 +1,6 @@
 package com.phishguard.backend_springboot.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,9 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 public class ScanResponse {
     private String url;
-    private boolean phishing;
-    private int riskScore;
-    private String verdict;
+
+    @JsonProperty("isPhishing")
+    private boolean isPhishing;
+
+    private double riskScore;
     private List<String> reasons;
-    private boolean cached;
+    private Boolean cached;
 }
